@@ -1,0 +1,76 @@
+
+<!DOCTYPE>
+<html ng-app='demo'>
+<head>
+	<title>Algo-comp</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+	<link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+   
+</head>
+<!-- <script type="text/javascript">
+	angular.module('demo', [])
+.controller('Hello', function($scope, $http) {
+    $http.get('http://localhost:5000/resourse').
+        then(function(response) {
+            $scope.report  = response.data;
+        });
+});
+</script>
+ -->
+<body>
+		<nav class="navbar sticky-top navbar-dark bg-primary" >
+			
+	  			<a class="navbar-brand center">Algo-comparision</a>
+	  		
+		</nav>	
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<div class="card">
+			  <div class="card-header">
+			    <h5>Algorithm comparision </h5>
+			  </div>
+			  <div class="card-body">
+			    <h5 class="card-title">Special title treatment</h5>
+			    <p class="card-text">Enter the array elements below seperated by comma <span style="font-size: 24px"><b>" , "</b></span>.</p>
+			    <div class="form-group">
+    <label for="exampleFormControlTextarea1">Textarea</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+			    <a href="#" class="btn btn-primary">Go somewhere</a>
+			  </div>
+			</div>
+		</div>	
+
+	</div>
+	<div class="row">
+		<div class="card" ng-controller='Hello'>
+  		<div class="card-body">
+    
+    	<table class="table">
+    		<thead>
+    			<tr>
+    				<th scope="col">Name</th>
+    				<th scope="col">Fake %</th>
+    				<th scope="col">Real %</th>
+    				<th scope="col">ID</th>
+    				<th scope="col">TimeStamp</th>
+    			</tr>
+    		</thead>
+    		<tbody>
+    			<tr ng-repeat='data in report'>
+    				<td>{{data.NAME}}</td>
+    				<td>{{data.fakeP}}</td>
+    				<td>{{data.RealP}}</td>
+    				<td>{{data.id}}</td>
+    				<td>{{data.processed_time}}</td>
+    			</tr>
+    		</tbody>
+    	</table>
+  		</div>
+	</div>
+	</div>
+</div>
+</body>
+</html>

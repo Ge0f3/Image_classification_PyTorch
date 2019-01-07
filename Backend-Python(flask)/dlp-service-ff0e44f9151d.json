@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "dlp-service",
+  "private_key_id": "ff0e44f9151ddd4aeacf654f1eb90b6544bcb64c",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCtDhhtZ9p9TslG\nk23boJI3RuZkdMuejH7Hh8dRJ77BlCcnVww+7N1X2sJMmD+ZFbpa7PlvJLzSs7dS\nF5uIgO3JGwmxrKYwenTGK4kk3zNdO+0ARK01/2HwfY1es1um+OLrHKpcu6BMgiXK\nt6bRfuDV0KKVRpXCBeCAlb56qRavd78euD4zaB1L6KK4Ae004+Qa3Zg8lHcrMLlV\ntPjJReQmrR6ocZBrBRXPJ8zK9tKbiMzyKkTh7mmJYB77MBrMPnZIcEGMV99Nt1Ip\nby2R9VOBFqYVzme6esZbaijcG0NnCcicsIOoUhWYQrfK7dp1eEtdvUM63PCNYYTc\nwR7EMYSPAgMBAAECggEAH7Arj+kK7JQfLhGz9Zn+/Ck66d0rJeKjGmVF/ZnSB79Z\ntg3t+53C4CH6Hy1nw9/jKmAnQo9PFiP7ZwhUnhfBsugFC+hJ3CmoNVtmdv55+NIO\n0VRCBVe4tuE+oD8mgrojTxsGJQnkTe4s/mRHoyfhArX792qf5JHP7Ku+39YThdiR\n7IJNBkfZNZsPrkfrqZtx46IYdTf+hOjjuKFHguVLvbhonZFlzff3YQaFBUKuLoeW\nJfnlZ77N0LvGElZ2G85jfT7LwWJZ6ULjEcJS+J0rF6wam1jevQkobWHvPUJ1/a8I\nV/i/u/u79WcMoU1hYzWN3NjGLYB7YCvU4wbKsY0IhQKBgQDTVoDElGemy0DNO7jK\ndrzfkm2OXgE3ZBzGbVN3fUI9ulPR+BH0R8pkSH3j4U26hWnDY/waAAl2RjstbDOf\nARkOnNJKSc3aOg0JoML1gSO1jzbKDBwix8/7/odtqzyOx6shqn1jeWtwuvEQ1z+K\nFuCvEbbrpHDyfuplnICaTb9RhQKBgQDRoHg1Kd45e2mnhzHwGVXthjVvtuiVodKg\nSWlXe0qDeD0MWc5e5R/vZqVX/Bvaa6XgO60ZHAVSKKs5jZwP42lthfWOjnLIUdJR\nOUaQo6sbhYtKsLgfjdzms75gzRrARFf8M3xVkse2lAU/0saAOhf6G8dN4teIKNPq\nvoPTx7JQAwKBgCa3RCO/JDX0Kkzu0e2VTwiOJK/eHM7u8i6PvKi5M7dnOQ/QKEne\nFP/GH/ntPnYbFsMKwBZrR1B5kUHC/rn0U4jPxd6CIsoFtHm9D7o2DDqon9rn2Qeu\nHzYE7P50TkXB4mHqf8oHZl1igeMZ67P6ePLZhe8pUt+5zGsM/qpF7/SZAoGBAL4T\ntIv4P9F9bysB8q0UPA8ZL6DxiGoNhq/igQta9xDI2Qo28GKpfdCVEX37UsI18/2j\n/uwStVxvFfskxYq+mR0/Z45w6fFsB7mwpqSGU6Or7sa2AO5TsybZetnJgOUv01wS\nzz3EzyRliXD6zRT+GDmoMIsWEnsbEjT7tQs2OyBDAoGAe+UYzxGxmBtT9hU/zgxd\nwj+aWP26XHbthSu6A3AUIUaU6XL3T2PtDiCoSkjfS2epZqN9AJe6HTQzXyXK/cRD\nJspfTjg8MQJt4U7DGF2JlFNdisFw/zFU6vY5Ir+00eFqm/6lgCUE3HCRjZJQoKAG\n0GlzRhyfVlQWA44NGBJQIwc=\n-----END PRIVATE KEY-----\n",
+  "client_email": "dip-service-access@dlp-service.iam.gserviceaccount.com",
+  "client_id": "101746300770472560474",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dip-service-access%40dlp-service.iam.gserviceaccount.com"
+}

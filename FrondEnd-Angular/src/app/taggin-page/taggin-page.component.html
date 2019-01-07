@@ -1,0 +1,39 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div class="jumbotron ">
+  <div style="text-align:center">
+      <h1>
+  {{ title }}
+</h1>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+      <div class="col-md">
+            <div class="card  text-center" style="height: 18rem;">
+                    <div class="card-header">
+                        <h3>Fileupload</h3>
+                    </div>
+                    <div class="card-body">
+                            <form class="form-signin" action="http://0.0.0.0:5000/datatag" method="POST" enctype="multipart/form-data">
+
+                                <div class="form-group">
+                                    <label for="exampleFormControlFile1">Upload the tagged/classified file here</label><br>
+                                    <input #fileInput type="file" class='center' name="file" />
+                                </div>
+
+                                <div style="text-align:center;">
+
+                                </div>
+                            </form>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" value=Upload class="btn btn-info left" (click)='datamask($event)'>Mask !!</button> &nbsp;
+                            
+                            </div>
+                             </div>
+      </div>
+  </div>
+  <br>
+  
+</div>

@@ -1,0 +1,96 @@
+<div class="jumbotron ">
+  <div style="text-align:center">
+      <h1>
+  Artificial DataGeneration
+</h1>
+  </div>
+</div>
+<div class="container">
+  <div class="card text-center">
+      <div class="card-header">
+         
+      </div>
+      <div class="card-body">
+          <form>
+              <div class="form-row">
+              <div class="form-group col-md-2" >
+                  <label for="FileName" >FileName</label>
+                  <input type="text" [value]="file.name" (input)="file.name = $event.target.value" class="form-control" name="FileName">
+              </div>
+          </div>
+          <hr>
+              <div class="form-row">
+                  <div class="form-group col-md-8">
+                      <label for="inputcol">Number of columns</label>
+                      <select id="inputcol" class="form-control" (change)="countchange($event)">
+                        <!-- <option selected>Choose...</option> -->
+                        <option *ngFor="let types of infoTypes" [ngValue]="types">{{types}}</option>
+                        <!-- <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option> -->
+                      </select>
+                    </div>
+              </div>
+              <hr>
+              <div class="form-row" *ngFor="let item of options">
+                  <div class="form-group col-md-6">
+                      <label for="inputcol">infoType</label>
+                      <select id="inputcol" class="form-control" (change)="setColumn1($event, item)">
+                          <option *ngFor="let item of values" [ngValue]="item">{{item}}</option>
+                        <!-- <option value='null'>Choose...</option>
+                        <option value="Name">Name</option>
+                        <option value="MobileNumber">MobileNumber</option>
+                        <option value="Email">Email</option>
+                        <option value="Address">Address</option> -->
+                      </select>
+                    </div>
+                    <div class="form-group col-md-4 float-left ">
+                        <!-- <label for="inputrow">Count</label>
+                        <input type="text" class="form-control" id="inputrow" placeholder="count"> -->
+                    </div>
+                    <div class="form-group col-md-2 float-left ">
+                          <label for="inputrow">Count</label>
+                          <input type="text" class="form-control" id="inputrow" placeholder="count" (change)="setColumn2($event, item)" [(ngModel)]="item.column2">
+                    </div>
+              </div>
+              
+              <hr>
+              <div class="form-row">
+                <div class="form-group col-md-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="CSV" id="radio1" value="option1" >
+                        <label class="form-check-label" for="csv">CSV</label>
+                      </div>
+                </div>
+                <div class="form-group col-md-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Json" id="radio2" value="option2" >
+                        <label class="form-check-label" for="json">Json</label>
+                      </div>
+                </div>
+                <div class="form-group col-md-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Excel" id="radio3" value="option3" >
+                        <label class="form-check-label" for="Excel">Excel</label>
+                      </div>
+                </div>
+                <div class="form-group col-md-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="SQL" id="radio4" value="option4" >
+                        <label class="form-check-label" for="sql">SQL</label>
+                      </div>
+                </div>
+                
+              </div>
+              
+            </form>
+            <button class="btn btn-primary" (click)="generate($event)">Generate</button>
+      </div>
+      <div class="card-footer text-muted">
+        Copyright Beoing 2018
+      </div>
+    </div>
+</div>

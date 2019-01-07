@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+        <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.2.js"></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js'></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-cloud/1.2.4/d3.layout.cloud.js"></script>
+        
+    </head>
+    <style type="text/css">
+        .small{
+              width: 40rem !important;
+            }
+    </style>
+    <body>
+        <div class="card small">
+        <div class="card-header">
+            <h2 align="center">Comparision of different sorting algorithm</h3>
+        </div>
+        <div class="card-body">
+        <canvas height="40vh" width="80vw" id="myChart"></canvas>
+        </div>
+        </div>
+        
+    </body>
+<script>
+var ctx = document.getElementById("myChart").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ["Buble sort ", "Insertion Sort", "Merge sort", "Heapsort", "quicksort", "Bucketsort","Counting sort"],
+        datasets: [{
+            label: 'Speed',
+            data: [12, 19, 3, 5, 2, 3,20],
+            borderColor: "#80b6f4",
+            pointBorderColor: "#80b6f4",
+            pointBackgroundColor: "#80b6f4",
+            pointHoverBackgroundColor: "#80b6f4",
+            pointHoverBorderColor: "#80b6f4",
+            pointBorderWidth: 10,
+            pointHoverRadius: 10,
+            pointHoverBorderWidth: 1,
+            pointRadius: 3,
+            fill: false,
+            borderWidth: 4,
+            fillColor: "#79D1CF",
+            strokeColor: "#79D1CF",
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+
+</script>
+</html>

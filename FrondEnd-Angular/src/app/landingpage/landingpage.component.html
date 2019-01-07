@@ -1,0 +1,72 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div class="jumbotron ">
+  <div style="text-align:center">
+      <h1>
+  {{ title }}
+</h1>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+      <div class="col-md">
+            <div class="card  text-center" style="height: 18rem;">
+                    <div class="card-header">
+                        <h3>Fileupload</h3>
+                    </div>
+                    <div class="card-body">
+                            <form class="form-signin" action="http://0.0.0.0:5000/datatag" method="POST" enctype="multipart/form-data">
+
+                                <div class="form-group">
+                                    <label for="exampleFormControlFile1">Sample file input</label><br>
+                                    <input #fileInput type="file" class='center' name="file" />
+                                </div>
+
+                                <div style="text-align:center;">
+
+                                </div>
+                            </form>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" value=Upload class="btn btn-primary left" (click)='datatag($event)'>Upload</button> &nbsp;
+                                <button id="wrapper" type="submit" class="btn btn-primary" (click)='visualize($event)'>Visualize</button>  &nbsp;
+                                <button type="button" class="btn btn-outline-warning" (click)="download($event)">File Dowload</button>
+                            </div>
+                             </div>
+      </div>
+  </div>
+  <br>
+  <!-- <div class="row">
+      <div class="col">
+            <div class="card">
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Input</label>
+                                <textarea [(ngModel)]="data.privacydata " name='data' class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <small id="emailHelp" class="form-text text-muted">sample check .</small>
+                            </div>
+                            <button type="submit" class="btn btn-primary" (click)='predict($event)'>Submit</button>
+                        </form>
+                    </div>
+                </div>
+      </div>
+        <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                        Visualation
+                    </div>
+                    <div class="card-body">
+                        <button id="wrapper" type="submit" class="btn btn-primary" (click)='visualize($event)'>Visualize</button>
+                        <br>
+                        <div *ngIf="chart" style="width: 50rem" class="card">
+                            <div class="card-body">
+                                <canvas baseChart id="canvas" ></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+      
+            </div>
+  </div> -->
+</div>

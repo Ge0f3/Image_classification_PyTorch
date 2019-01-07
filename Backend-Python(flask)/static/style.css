@@ -1,0 +1,32 @@
+.col-centered {
+  float: none !important;
+  margin: 0 auto;
+}
+
+.container{
+	margin: 54px;
+}
+
+.center {
+  padding-left: 0em;
+}
+
+nav {
+  background-color: #00b0ff !important;
+}
+
+.btn {
+  background-color: #007bff !important;
+  border-color: #007bff !important;
+}
+
+
+
+textarea{
+    min-height: 6rem !important;
+}
+
+a.active{
+    background-color: transparent;
+    color: #00b0ff !important;
+}
