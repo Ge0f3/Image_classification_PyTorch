@@ -6,19 +6,26 @@ import json,requests
 from flask_cors import CORS,cross_origin
 from collections import Counter
 import pandas as pd
+import numpy as np 
 import pickle
 import pyodbc
+import torch
+from torch import nn
+import torch.nn.functional as F
+from torchvision import datasets, transforms
+from PIL import Image
 
 
 
-#database connection 
+#Network Architecture  
+# Build a feed-forward network
+model = nn.Sequential(nn.Linear(784, 128),
+                      nn.ReLU(),
+                      nn.Linear(128, 64),
+                      nn.ReLU(),
+                      nn.Linear(64, 10),
+                      nn.LogSoftmax(dim=1)) 
 
-server = 'udapilot.database.windows.net'
-#server = 'mydbgeo.database.windows.net'
-database = 'uda_pilot'
-username = 'geoffrey'
-password = 'Ge0f3!94'
-driver= '{FreeTDS}'
 
 
 app = Flask(__name__)
@@ -28,11 +35,13 @@ CORS(app, resources={r"/*": {"origins": "*"}})
 
 
 #loading ML models
-ser_prec = pickle.load(open('./Model/model_file','rb'))
-ser_countvect =pickle.load(open('./Model/vector_countvect','rb'))
-
+state_dict = torch.load("./Model/MINST.pth")
+model.load_state_dict(state_dict)
 #list of allowed File
-ALLOWED_EXTENSIONS = set(['csv', 'pdf', 'json', 'txt', 'jpeg', 'gif','py','CSV'])
+ALLOWED_EXTENSIONS = set(['csv', 'pdf', 'json', 'txt', 'jpeg', 'gif','py','CSV','jpg'])
+
+UPLOAD_FOLDER = os.path.basename('uploads')
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 def load_json():
 	path  = './inspect-request.json'
@@ -52,6 +61,12 @@ def application(environ, start_response):
     )
     return ''
 
+def image_to_data(image):
+    image_data = np.array(image) / 255
+    image_data = image_data.reshape((1, 28, 28))
+    image_data = torch.from_numpy(image_data)
+    image_data = image_data.float()
+    return image_data
 
 def post_request_DLP(data):
 	url = "https://dlp.googleapis.com/v2/projects/dlp-service/content:inspect"
@@ -80,6 +95,18 @@ def predict_file(file):
 	df_result['Data']=df['Data']
 	df_result['prediction']=pd.Series(predicted_results).values
 	return (df_result.reset_index().to_json(orient='records'))
+
+def predict_image(file):
+	#file = (open(file, 'r'))
+	data = image_to_data(file)
+	img = data.view(1, 784)
+	with torch.no_grad():
+		logps = model(img)
+	ps = torch.exp(logps)
+	ps = ps.numpy()
+	ps = ps.tolist()
+	app.logger.info(ps)
+	return ps
 
 def data_mask(df):
 	if (df['PII-Mobile_number']== 'PII-Person_name'):
@@ -114,14 +141,15 @@ def datatag():
 	if request.method=='POST':
 		file = request.files['file']
 		if file and allowed_file(file.filename):
-			df = predict_file(file)
+			image = Image.open(file)
+			df = predict_image(image)
 			app.logger.info(df)
-			return (df)
-			# return jsonify(
-            #     [
-            #     {'sucess': file.filename
-            #     }
-            #     ])
+			# return (df)
+			return jsonify(
+                [
+                {'sucess': df[0]
+                }
+                ])
 		else:
 			return jsonify(
                 [

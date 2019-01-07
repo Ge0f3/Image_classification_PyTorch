@@ -10,7 +10,7 @@ import { Angular5Csv } from 'angular5-csv/Angular5-csv';
   styleUrls: ['./landingpage.component.css']
 })
 export class LandingpageComponent implements OnInit {
-  title = 'Data Classification/Tagging';
+  title = 'Image Classification of MNIST  DataSet';
   public data:data=new data();
   public chart:any;
   public PII:any
@@ -30,6 +30,9 @@ export class LandingpageComponent implements OnInit {
       res => {
         console.log(res)
         this.result_json = res as JSON;
+        swal(
+          res[0]['sucess'][0]
+        )
       },
       err => {
         console.log("Something happened error !!!!")
