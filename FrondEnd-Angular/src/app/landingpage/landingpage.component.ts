@@ -28,10 +28,16 @@ export class LandingpageComponent implements OnInit {
     formData.append('file',files[0]);
     this.httpClient.post('http://localhost:5000/datatag',formData).subscribe(
       res => {
-        console.log(res)
+       
         this.result_json = res as JSON;
+        res = this.result_json[0]['sucess']
+        console.log(res)
+        console.log(typeof res)
+        
         swal(
-          res[0]['sucess'][0]
+          'The Prediction is '+res,
+          "!!!!!",
+          'success'
         )
       },
       err => {

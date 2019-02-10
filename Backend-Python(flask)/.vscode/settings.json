@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "/Users/geoffreygeo/anaconda3/bin/python"
+    "python.pythonPath": "/Users/geofe/anaconda3/bin/python",
+    "git.ignoreLimitWarning": true
 }
