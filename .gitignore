@@ -110,3 +110,9 @@ venv.bak/
 #deep learning files folder 
 
 /deep-learning-v2-pytorch
+
+#node_modules
+Backend-Python(flask)/node_modules/
+
+#VScode setting 
+Backend-Python(flask)/.vscode/settings.json
